@@ -100,25 +100,26 @@ class _PriceListWidgetState extends State<PriceListWidget> {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              PriceTextField(
-                  width: 50,
-                  controller: _firstController,
-                  index: index,
-                  onChanged: (value) {
-                    priceList[index].priceId = int.parse(value);
-                  }),
-              const SizedBox(
-                width: 16,
-              ),
-              PriceTextField(
-                  width: 105,
-                  controller: _secondController,
-                  index: index,
-                  onChanged: (value) {
-                    priceList[index].price = int.parse(value);
-                  }),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.35,
+              Row(
+                children: [
+                  PriceTextField(
+                      width: 50,
+                      controller: _firstController,
+                      index: index,
+                      onChanged: (value) {
+                        priceList[index].priceId = int.parse(value);
+                      }),
+                  const SizedBox(
+                    width: 16,
+                  ),
+                  PriceTextField(
+                      width: 105,
+                      controller: _secondController,
+                      index: index,
+                      onChanged: (value) {
+                        priceList[index].price = int.parse(value);
+                      }),
+                ],
               ),
               IconButton(
                 icon: const Icon(
